@@ -205,32 +205,98 @@
 
 </footer>
 
+<footer style="padding: 50px 20px; background: #181c2b; text-align: center;">
+  <p class="footer-top-line">Crafted with clean</p>
+  <div class="footer-typewriter">
+    <span class="footer-bottom-text" id="footer-typewriter"></span>
+    <span class="blinking-caret">|</span>
+  </div>
+</footer>
+
 <style>
-.typewriter-footer {
-  font-size: 1rem;
-  font-weight: 600;
-  max-width: fit-content;
-  margin: 0 auto;
-  color: transparent;
+.footer-top-line {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
   background: linear-gradient(90deg, #23ffe8, #ff66c4);
   -webkit-background-clip: text;
-  background-clip: text;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #23ffe8;
-  animation: typing 6s steps(50, end), blink 0.7s step-end infinite;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(35, 255, 232, 0.2);
+  letter-spacing: 0.5px;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+.footer-typewriter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  max-width: 100%;
+}
+
+.footer-bottom-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #23ffe8, #ff66c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.4px;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.blinking-caret {
+  color: #23ffe8;
+  font-weight: 500;
+  font-size: 1rem;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 100% { border-color: transparent }
-  50% { border-color: #23ffe8 }
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 </style>
+
+<script>
+const footerLines = [
+  "code & caffeine — Prince Soni",
+  "pixels & purpose — Prince Soni",
+  "logic & late nights — Prince Soni",
+  "design & discipline — Prince Soni"
+];
+
+let line = 0;
+let char = 0;
+let deleting = false;
+const textEl = document.getElementById("footer-typewriter");
+
+function animateFooter() {
+  const current = footerLines[line];
+  if (deleting) {
+    char--;
+    textEl.textContent = current.substring(0, char);
+    if (char === 0) {
+      deleting = false;
+      line = (line + 1) % footerLines.length;
+      setTimeout(animateFooter, 400);
+    } else {
+      setTimeout(animateFooter, 30);
+    }
+  } else {
+    char++;
+    textEl.textContent = current.substring(0, char);
+    if (char === current.length) {
+      deleting = true;
+      setTimeout(animateFooter, 1400);
+    } else {
+      setTimeout(animateFooter, 50);
+    }
+  }
+}
+
+animateFooter();
+</script>
     <div class="copyright">
       &copy; 2025 Prince Soni. All Rights Reserved.
     </div>
