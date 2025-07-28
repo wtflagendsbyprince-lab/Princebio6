@@ -66,7 +66,27 @@
     <!-- Bio Card -->
     <div class="bio-card">
       <img src="profile.jpg" alt="Prince Soni" class="profile-pic">
-      <h1>Prince Soni</h1>
+      <h2 class="glow-heading">
+  Hi, I’m Prince Soni
+</h2>
+
+<style>
+.glow-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #23ffe8, #ff66c4, #23ffe8);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowMove 4s linear infinite;
+}
+
+@keyframes glowMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+</style>
       <div class="tagline">Digital Creator • web designer• Code Wizard</div>
       <div class="bio">
         Exploring the magic of frontend, dark UI and creative coding.<br>
