@@ -1,9 +1,73 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Prince Soni — Mast Stylish Full Bio</title>
-  <style>
+<!-- ⚡ Creative Pulse 2.1 - With Your Name -->
+<section style="padding: 100px 24px; background: linear-gradient(145deg, #181c2b, #1f2236); border-radius: 28px; overflow: hidden; position: relative;">
+
+  <h2 style="text-align: center; font-size: 2.8rem; font-weight: 700; color: #f8f9fa; margin-bottom: 16px;">
+    Hi, I’m <span class="name-glow">Prince Soni</span>
+  </h2>
+
+  <p style="text-align:center; font-size: 1.15rem; color: #c9d1da; max-width: 720px; margin: 0 auto 50px;">
+    A digital artist who blends dark UI, creative code, and emotion-driven design into immersive online experiences.
+  </p>
+
+  <h3 style="text-align:center; font-size: 1.6rem; color: #23ffe8; margin-bottom: 40px;">
+    I Build Interfaces That Feel Alive ⚡
+  </h3>
+
+  <div class="pulse-grid">
+    <div class="pulse-card">Design Systems</div>
+    <div class="pulse-card">Dark Mode Aesthetics</div>
+    <div class="pulse-card">Micro Interactions</div>
+    <div class="pulse-card">UX that Breathes</div>
+    <div class="pulse-card">Code with Flow</div>
+    <div class="pulse-card">Neon Energy</div>
+  </div>
+
+</section>
+
+<style>
+.name-glow {
+  background: linear-gradient(90deg, #23ffe8, #ff66c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseText 3s infinite linear;
+  font-weight: 800;
+}
+
+@keyframes pulseText {
+  0% { text-shadow: 0 0 6px #23ffe8aa; }
+  50% { text-shadow: 0 0 14px #ff66c4aa; }
+  100% { text-shadow: 0 0 6px #23ffe8aa; }
+}
+
+.pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.pulse-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #2fffe7aa;
+  border-radius: 16px;
+  padding: 24px 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #23ffe8;
+  text-align: center;
+  box-shadow: 0 0 12px #23ffe827;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.pulse-card:hover {
+  transform: scale(1.06);
+  background: rgba(35, 255, 232, 0.1);
+  box-shadow: 0 0 20px #23ffe888;
+  color: #fff;
+}
+</style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
     body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top left, #23254b 60%, #181c2b 100%); font-family: 'Inter', Arial, sans-serif; color: #f8fafc;}
     .wrapper { max-width: 820px; margin: 0 auto 50px auto; padding: 0 2vw;}
