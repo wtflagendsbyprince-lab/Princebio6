@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Prince Soni — Mast Stylish Full Bio</title>
+  <title>Prince Soni — Full Bio</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
     body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top left, #23254b 60%, #181c2b 100%); font-family: 'Inter', Arial, sans-serif; color: #f8fafc;}
@@ -109,7 +109,6 @@
       <h2>Hobbies & Interests</h2>
       <div class="section-content">
         <div class="hobbies-list">
-          <div class="hob-card">🎮 Game Dev</div>
           <div class="hob-card">🖌️ UI/UX Design</div>
           <div class="hob-card">🔮 Coding Experiment</div>
           <div class="hob-card">📸 Telegram tools</div>
@@ -148,33 +147,11 @@
           <div class="badge"><span class="icon">🎓</span> Web Design </div>
           <div class="badge"><span class="icon">⭐</span> Top 10 UI Challenge</div>
           <div class="badge"><span class="icon">🚀</span> 50+ Projects Completed</div>
-          <div class="badge"><span class="icon">💡</span> Innovation Award 2025</div>
+  
         </div>
       </div>
     </section>
-    <!-- Quotes/Inspirations -->
-    <section>
-      <h2>Favorite Quotes & Inspirations</h2>
-      <div class="section-content quotes-list">
-        <div class="quote-block">
-          "Code is like humor. When you have to explain it, it’s bad."
-          <div class="quote-author">– Cory House</div>
-        </div>
-        <div class="quote-block">
-          "Simplicity is the soul of efficiency."
-          <div class="quote-author">– Austin Freeman</div>
-        </div>
-        <div class="quote-block">
-          "Design is intelligence made visible."
-          <div class="quote-author">– Alina Wheeler</div>
-        </div>
-        <div class="quote-block">
-          "Stay curious, keep building, never stop learning."
-          <div class="quote-author">– Prince Soni</div>
-        </div>
-      </div>
-    </section>
-    
+   
 <!-- 💌 Letters I’ll Never Send – With Music Toggle -->
 <section style="margin-top:60px; position:relative; overflow:hidden;">
   <h2 style="text-align:center; color:#23ffe8; font-weight:700; font-size:1.6rem;">
@@ -189,6 +166,124 @@
     <div style="position:absolute; bottom:10px; right:18px; font-size:0.8rem; color:#ff9ee7b5; z-index:2;">
       – From the quiet side of <span style="color:#23ffe8; font-weight:600;">Prince☺️</span>
     </div>
+<!-- 💭 If You Could Read My Mind... – Swag Edition -->
+<section style="margin-top:60px; padding:60px 24px; background:radial-gradient(ellipse at top left, #1f2336, #141622); position:relative; overflow:hidden; border-radius:24px;">
+
+  <h2 style="text-align:center; color:#23ffe8; font-size:2.1rem; font-weight:700; margin-bottom:36px; text-shadow:0 0 10px #23ffe88c;">
+    If You Could Read My Mind... 💭
+  </h2>
+
+  <!-- 💬 Flip Cards -->
+  <div class="mind-grid">
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-face front">
+          I told my brain to stop thinking about you.<br><span class="fade">It gave me a 404 error.</span>
+        </div>
+        <div class="flip-face back">
+          You’re not my type —<br><span class="fade">you’re my syntax.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-face front">
+          I tried ignoring you.<br><span class="fade">My heart threw an exception.</span>
+        </div>
+        <div class="flip-face back">
+          You walked in like a function,<br><span class="fade">but you returned butterflies.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-face front">
+          Not gonna lie,<br><span class="fade">I’d debug a 1000-line error for one smile.</span>
+        </div>
+        <div class="flip-face back">
+          If flirting was a language,<br><span class="fade">I’d be fluent in you.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🖊 Signature -->
+  <div style="text-align:right; margin-top:36px; font-family:'Great Vibes', cursive; color:#ff66c4; font-size:1.3rem; padding-right:12px; text-shadow: 0 0 6px #ff66c4aa; position:relative; z-index:2;">
+    — Prince Soni
+  </div>
+
+  <!-- 🔮 Glow Background -->
+  <div class="glow-circle" style="top:-80px; left:-60px;"></div>
+  <div class="glow-circle" style="bottom:-60px; right:-60px;"></div>
+
+</section>
+
+<!-- 💎 STYLES -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.mind-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.flip-card {
+  perspective: 1000px;
+  height: 150px;
+}
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  position: relative;
+}
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #c8faff;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #23ffe866;
+  border-radius: 14px;
+  box-shadow: 0 0 10px #23ffe820;
+  backdrop-filter: blur(6px);
+  backface-visibility: hidden;
+  overflow-wrap: break-word;
+}
+.flip-face.back {
+  transform: rotateY(180deg);
+}
+.fade {
+  opacity: 0.85;
+  font-style: italic;
+  display: block;
+  margin-top: 6px;
+}
+.glow-circle {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #23ffe822;
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: 0;
+}
+</style>
 
     <!-- 💗 Floating PINK HEARTS -->
     <div class="floating-heart" style="top: -12px; left: 28px;"></div>
