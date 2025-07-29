@@ -304,9 +304,9 @@ function toggleLoveMusic() {
   isPlaying = !isPlaying;
 }
 </script>
-      <!-- 🖤 Late Night Logs – Terminal Style Diary with Music -->
-<section style="margin-top:60px; padding:40px 0; background:linear-gradient(145deg, #181c2b, #1f2236); border-radius:18px; max-width:780px; margin-left:auto; margin-right:auto; box-shadow:0 0 24px #23ffe83f; position:relative;" onclick="toggleLogsMusic()">
-
+      
+<!-- 🖤 Late Night Logs – Terminal Style Diary with Music -->
+<section id="logSection" style="margin-top:60px; padding:40px 0; background:linear-gradient(145deg, #181c2b, #1f2236); border-radius:18px; max-width:780px; margin-left:auto; margin-right:auto; box-shadow:0 0 24px #23ffe83f; position:relative; cursor: pointer;">
   <h2 style="text-align:center; color:#23ffe8; font-size:1.4rem; font-family:'Poppins', sans-serif; margin-bottom:24px;">
     <span style="text-shadow: 0 0 6px #23ffe877;">Late Night Logs</span>
   </h2>
@@ -319,14 +319,13 @@ function toggleLoveMusic() {
   </div>
 
   <div style="text-align:center; font-size:0.85rem; color:#23ffe8aa; margin-top:12px;">
-    🔊 Click anywhere in this box to play/pause the vibe
+    🔊 Click this section to play/pause music
   </div>
 
-  <!-- 🎵 Audio -->
   <audio id="logAudio" src="slow.mp3" preload="auto" loop></audio>
 </section>
 
-<!-- 🖥️ SCRIPT -->
+<!-- 💻 JavaScript -->
 <script>
 const terminalLines = [
   "> 12:48 AM — Tried to fix CSS. Ended up fixing my mood with her smile.",
@@ -357,20 +356,20 @@ function typeTerminal() {
 }
 window.addEventListener("DOMContentLoaded", typeTerminal);
 
-// 🎵 Music Toggle
+// 🔊 Music Toggle
 let isPlaying = false;
-function toggleLogsMusic() {
-  const audio = document.getElementById("logAudio");
+const logAudio = document.getElementById("logAudio");
+document.getElementById("logSection").addEventListener("click", () => {
   if (isPlaying) {
-    audio.pause();
+    logAudio.pause();
   } else {
-    audio.play();
+    logAudio.play();
   }
   isPlaying = !isPlaying;
-}
+});
 </script>
 
-<!-- ✨ STYLE -->
+<!-- ✨ Style -->
 <style>
 @keyframes blinkCursor {
   0%, 100% { opacity: 1; }
@@ -382,7 +381,7 @@ function toggleLogsMusic() {
   margin-left: 2px;
 }
 </style>
-      
+
     <!-- Testimonials -->
     <section>
       <h2>What People Say</h2>
