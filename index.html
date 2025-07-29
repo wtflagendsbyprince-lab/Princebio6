@@ -87,27 +87,26 @@
   100% { background-position: 200% }
 }
 </style>
-      <!-- 🌌 About Me – Smooth Typewriter + Emojis (No Layout Shift) -->
-<section style="margin-top:60px; padding:40px 24px; background:linear-gradient(145deg, #181c2b, #1f2236); border-radius:20px; max-width:780px; margin:auto; box-shadow:0 0 30px #23ffe84a; position:relative; overflow:hidden;">
+      <!-- 🌌 About Me – Compact Typewriter + Emoji -->
+<section style="margin-top:40px; padding:28px 20px; background:linear-gradient(145deg, #181c2b, #1f2236); border-radius:18px; max-width:760px; margin:auto; box-shadow:0 0 24px #23ffe83a; position:relative; overflow:hidden;">
 
-  <h2 style="text-align:center; font-family:'Poppins', sans-serif; font-size:1.6rem; font-weight:600; margin-bottom:24px;">
-    <span style="background: linear-gradient(90deg, #23ffe8, #ff66c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow:0 0 8px #23ffe877;">
+  <h2 style="text-align:center; font-family:'Poppins', sans-serif; font-size:1.4rem; font-weight:600; margin-bottom:16px;">
+    <span style="background: linear-gradient(90deg, #23ffe8, #ff66c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow:0 0 6px #23ffe877;">
       About Prince Soni
     </span>
   </h2>
 
-  <div id="aboutContainer" style="font-family:'Inter', sans-serif; color:#b8faff; font-size:1rem; line-height:1.7; text-align:center; max-width:680px; margin:0 auto; min-height:220px;">
-    <div id="aboutTyped" style="white-space:pre-wrap;"></div>
-  </div>
+  <div id="aboutTyped" style="font-family:'Inter', sans-serif; color:#b8faff; font-size:0.95rem; line-height:1.65; text-align:center; max-width:640px; margin:0 auto; white-space:pre-wrap;"></div>
 
-  <!-- 💖 Signature -->
-  <div style="text-align:right; padding-top:24px; padding-right:12px;">
-    <span style="font-family:'Dancing Script', cursive; font-size:1.2rem; color:#ff66c4d0; text-shadow:0 0 8px #ff66c4aa;">
+  <!-- ✍️ Signature -->
+  <div style="text-align:right; padding-top:18px; padding-right:10px;">
+    <span style="font-family:'Dancing Script', cursive; font-size:1rem; color:#ff66c4c7; text-shadow:0 0 6px #ff66c4aa;">
       — Prince Soni
     </span>
   </div>
 </section>
 
+<!-- 👾 Emoji Float -->
 <style>
 .emoji {
   display: inline-block;
@@ -119,34 +118,34 @@
 }
 </style>
 
+<!-- ⌨️ Typewriter Script -->
 <script>
 const aboutLines = [
   "I'm not just writing code — I'm <span class='emoji'>designing emotions 💻✨</span>.",
-  "A 21 y/o self-taught developer from Madhya Pradesh, India.",
-  "I blend <span class='emoji'>design 💡</span>, <span class='emoji'>vibes 🎧</span>, and <span class='emoji'>chaos 🌀</span> into interactive pixels.",
-  "",
-  "<span class='emoji'>⚡</span> Skills: HTML, CSS, JavaScript, Python, Java",
-  "<span class='emoji'>🎯</span> Hobbies: Dark UI, anime vibes, lofi beats, midnight debugging"
+  "21 y/o developer from Madhya Pradesh, India.",
+  "I build smooth UIs with <span class='emoji'>vibes 🎧</span> & <span class='emoji'>logic ⚙️</span>.",
+  "<span class='emoji'>⚡</span> Skills: HTML, CSS, JS, Python, Java",
+  "<span class='emoji'>🎯</span> Hobbies: Lofi coding, anime edits, night logs"
 ];
 
 let index = 0;
 const aboutBox = document.getElementById("aboutTyped");
 
 function typeHTMLLine(line, i = 0, buffer = "") {
-  const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = line;
-  const plainText = tempDiv.textContent || tempDiv.innerText || "";
+  const temp = document.createElement("div");
+  temp.innerHTML = line;
+  const plainText = temp.textContent || temp.innerText || "";
 
   function write() {
     if (i <= plainText.length) {
       aboutBox.innerHTML = buffer + plainText.substring(0, i);
       i++;
-      setTimeout(write, 28);
+      setTimeout(write, 22);
     } else {
-      aboutBox.innerHTML = buffer + line + "<br/><br/>";
+      aboutBox.innerHTML = buffer + line + "<br/>";
       index++;
       if (index < aboutLines.length) {
-        setTimeout(() => typeHTMLLine(aboutLines[index], 0, aboutBox.innerHTML), 500);
+        setTimeout(() => typeHTMLLine(aboutLines[index], 0, aboutBox.innerHTML), 400);
       }
     }
   }
@@ -157,6 +156,9 @@ window.addEventListener("DOMContentLoaded", () => {
   typeHTMLLine(aboutLines[index]);
 });
 </script>
+
+<!-- 🖋️ Font -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
 <!-- 🖋️ Signature Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
