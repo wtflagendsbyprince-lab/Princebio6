@@ -87,12 +87,79 @@
   100% { background-position: 200% }
 }
 </style>
-      <div class="tagline">Digital Creator • web designer• Code Wizard</div>
-      <div class="bio">
-        Exploring the magic of frontend, dark UI and creative coding.<br>
-        I make cool website, games, landing pages — and sprinkle neon vibes everywhere!<br>
-        <span style="color:#23ffe8;font-weight:700;">DMs open for custom projects, web tricks, and collabs.</span>
-      </div>
+      <!-- 🌌 About Me – Smooth Typewriter + Emojis (No Layout Shift) -->
+<section style="margin-top:60px; padding:40px 24px; background:linear-gradient(145deg, #181c2b, #1f2236); border-radius:20px; max-width:780px; margin:auto; box-shadow:0 0 30px #23ffe84a; position:relative; overflow:hidden;">
+
+  <h2 style="text-align:center; font-family:'Poppins', sans-serif; font-size:1.6rem; font-weight:600; margin-bottom:24px;">
+    <span style="background: linear-gradient(90deg, #23ffe8, #ff66c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow:0 0 8px #23ffe877;">
+      About Prince Soni
+    </span>
+  </h2>
+
+  <div id="aboutContainer" style="font-family:'Inter', sans-serif; color:#b8faff; font-size:1rem; line-height:1.7; text-align:center; max-width:680px; margin:0 auto; min-height:220px;">
+    <div id="aboutTyped" style="white-space:pre-wrap;"></div>
+  </div>
+
+  <!-- 💖 Signature -->
+  <div style="text-align:right; padding-top:24px; padding-right:12px;">
+    <span style="font-family:'Dancing Script', cursive; font-size:1.2rem; color:#ff66c4d0; text-shadow:0 0 8px #ff66c4aa;">
+      — Prince Soni
+    </span>
+  </div>
+</section>
+
+<style>
+.emoji {
+  display: inline-block;
+  animation: floatEmoji 2.2s ease-in-out infinite;
+}
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+</style>
+
+<script>
+const aboutLines = [
+  "I'm not just writing code — I'm <span class='emoji'>designing emotions 💻✨</span>.",
+  "A 21 y/o self-taught developer from Madhya Pradesh, India.",
+  "I blend <span class='emoji'>design 💡</span>, <span class='emoji'>vibes 🎧</span>, and <span class='emoji'>chaos 🌀</span> into interactive pixels.",
+  "",
+  "<span class='emoji'>⚡</span> Skills: HTML, CSS, JavaScript, Python, Java",
+  "<span class='emoji'>🎯</span> Hobbies: Dark UI, anime vibes, lofi beats, midnight debugging"
+];
+
+let index = 0;
+const aboutBox = document.getElementById("aboutTyped");
+
+function typeHTMLLine(line, i = 0, buffer = "") {
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = line;
+  const plainText = tempDiv.textContent || tempDiv.innerText || "";
+
+  function write() {
+    if (i <= plainText.length) {
+      aboutBox.innerHTML = buffer + plainText.substring(0, i);
+      i++;
+      setTimeout(write, 28);
+    } else {
+      aboutBox.innerHTML = buffer + line + "<br/><br/>";
+      index++;
+      if (index < aboutLines.length) {
+        setTimeout(() => typeHTMLLine(aboutLines[index], 0, aboutBox.innerHTML), 500);
+      }
+    }
+  }
+  write();
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  typeHTMLLine(aboutLines[index]);
+});
+</script>
+
+<!-- 🖋️ Signature Font -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
       <div class="links-bar">
         <a href="https://instagram.com/prince._soni2" target="_blank"><span class="icon">
           <svg width="22" height="22" viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="5.5" fill="#e13d7c"/><circle cx="16" cy="16" r="5.0" fill="#fff"/><circle cx="22" cy="10" r="1.3" fill="#fff"/></svg>
