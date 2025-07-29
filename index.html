@@ -174,14 +174,15 @@
         </div>
       </div>
     </section>
-    <!-- 💌 Letters I’ll Never Send – With Music & Click Prompt -->
+    
+<!-- 💌 Letters I’ll Never Send – With Music Toggle -->
 <section style="margin-top:60px; position:relative; overflow:hidden;">
   <h2 style="text-align:center; color:#23ffe8; font-weight:700; font-size:1.6rem;">
     Letters I’ll Never Send... 💗
   </h2>
 
-  <!-- 💖 Message Box Click = Music Play -->
-  <div onclick="document.getElementById('loveAudio').play()" style="cursor: pointer; background:linear-gradient(145deg, #181c2b, #1f2236); margin:20px auto 30px auto; padding:28px 26px; border-radius:18px; box-shadow:0 0 24px #23ffe844, inset 0 0 14px #23ffe855; max-width:660px; font-family:'Poppins', sans-serif; color:#ffeafd; font-size:1rem; line-height:1.65; position:relative; animation: pulse 3s ease-in-out infinite;">
+  <!-- 💖 Clickable Box -->
+  <div onclick="toggleLoveMusic()" style="cursor: pointer; background:linear-gradient(145deg, #181c2b, #1f2236); margin:20px auto 30px auto; padding:28px 26px; border-radius:18px; box-shadow:0 0 24px #23ffe844, inset 0 0 14px #23ffe855; max-width:660px; font-family:'Poppins', sans-serif; color:#ffeafd; font-size:1rem; line-height:1.65; position:relative; animation: pulse 3s ease-in-out infinite;">
     <pre id="letterBox" style="white-space:pre-wrap; min-height:100px; padding-right:8px; z-index:2; position:relative; margin:0;"></pre>
     <span class="cursor-neon" id="cursor">█</span>
 
@@ -196,25 +197,25 @@
     <div class="floating-heart" style="bottom: 22px; right: 44px;"></div>
   </div>
 
-  <!-- 🔊 Click-to-hear prompt -->
+  <!-- 🔊 Music Prompt -->
   <div style="text-align:center; margin-top:-10px; margin-bottom:32px;">
-    <span style="
+    <span id="musicPrompt" style="
       color:#23ffe8cc;
       font-size:0.95rem;
       font-family:'Poppins', sans-serif;
       letter-spacing:0.5px;
       text-shadow: 0 0 6px #23ffe899;
       animation: glowText 2.4s infinite ease-in-out;
-      display:inline-block;
-    ">
+      display:inline-block;">
       🔊 Click the box to hear what silence sounds like
     </span>
   </div>
 
-  <!-- 🎵 Hidden Audio Player -->
-  <audio id="loveAudio" src="perfect.mp3" loop></audio>
+  <!-- 🎵 Audio -->
+  <audio id="loveAudio" src="perfect.mp3" preload="auto" loop></audio>
 </section>
 
+<!-- ✨ Style -->
 <style>
 @keyframes blink {
   0%,100% {opacity: 1;}
@@ -230,12 +231,8 @@
   transform: translateY(-4px);
 }
 @keyframes pulse {
-  0%,100% {
-    box-shadow: 0 0 26px #23ffe84a, inset 0 0 16px #23ffe855;
-  }
-  50% {
-    box-shadow: 0 0 30px #23ffe877, inset 0 0 20px #23ffe899;
-  }
+  0%,100% {box-shadow: 0 0 26px #23ffe84a, inset 0 0 16px #23ffe855;}
+  50% {box-shadow: 0 0 30px #23ffe877, inset 0 0 20px #23ffe899;}
 }
 .floating-heart {
   position: absolute;
@@ -267,12 +264,13 @@
   100% {transform: translateY(-60px) scale(1.4); opacity: 0;}
 }
 @keyframes glowText {
-  0% { opacity: 0.8; text-shadow: 0 0 4px #23ffe866; }
-  50% { opacity: 1; text-shadow: 0 0 12px #23ffe8aa; }
-  100% { opacity: 0.8; text-shadow: 0 0 4px #23ffe866; }
+  0% {opacity: 0.8; text-shadow: 0 0 4px #23ffe866;}
+  50% {opacity: 1; text-shadow: 0 0 12px #23ffe8aa;}
+  100% {opacity: 0.8; text-shadow: 0 0 4px #23ffe866;}
 }
 </style>
 
+<!-- 🎯 Script -->
 <script>
 const letters = [
   "I wanted to impress you with design...\nbut all I really wanted was for you to stay a little longer.",
@@ -312,7 +310,23 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   observer.observe(box, { childList: true, subtree: true, characterData: true });
 });
+
+// 🎵 Toggle Music
+let isPlaying = false;
+function toggleLoveMusic() {
+  const audio = document.getElementById("loveAudio");
+  const prompt = document.getElementById("musicPrompt");
+  if (isPlaying) {
+    audio.pause();
+    prompt.innerHTML = "🔊 Click the box to hear what silence sounds like";
+  } else {
+    audio.play();
+    prompt.innerHTML = "⏸ Music is playing...";
+  }
+  isPlaying = !isPlaying;
+}
 </script>
+      
     <!-- Testimonials -->
     <section>
       <h2>What People Say</h2>
