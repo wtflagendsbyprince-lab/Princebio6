@@ -174,26 +174,45 @@
         </div>
       </div>
     </section>
-    <!-- 💌 Rotating Romantic Quotes - Clean & Classy -->
-<section style="margin-top:48px; position:relative; overflow:hidden;">
+    <!-- 💌 Letters I’ll Never Send – With Music & Click Prompt -->
+<section style="margin-top:60px; position:relative; overflow:hidden;">
   <h2 style="text-align:center; color:#23ffe8; font-weight:700; font-size:1.6rem;">
-    A Few Things I Wish You Knew...(for her)💗
+    Letters I’ll Never Send... 💗
   </h2>
 
-  <div style="background:linear-gradient(145deg, #181c2b, #1f2236); margin:20px auto 30px auto; padding:22px 20px; border-radius:18px; box-shadow:0 0 20px #23ffe840, inset 0 0 12px #23ffe850; max-width:600px; font-family:'Poppins', sans-serif; color:#ffeafd; font-size:0.95rem; line-height:1.6; position:relative; animation: pulse 2.8s ease-in-out infinite;">
-    <pre id="rotatingLove" style="white-space:pre-wrap; min-height:100px; padding-right:8px; z-index:2; position:relative;"></pre>
-    <!-- 💗 Credit Line -->
-    <div style="position:absolute; bottom:8px; right:16px; font-size:0.8rem; color:#ffb6eec7; z-index:2;">
-      – Crafted by <span style="color:#23ffe8; font-weight:600;">Prince Soni 💚</span>
-    </div>
-    <div class="cursor-neon">█</div>
+  <!-- 💖 Message Box Click = Music Play -->
+  <div onclick="document.getElementById('loveAudio').play()" style="cursor: pointer; background:linear-gradient(145deg, #181c2b, #1f2236); margin:20px auto 30px auto; padding:28px 26px; border-radius:18px; box-shadow:0 0 24px #23ffe844, inset 0 0 14px #23ffe855; max-width:660px; font-family:'Poppins', sans-serif; color:#ffeafd; font-size:1rem; line-height:1.65; position:relative; animation: pulse 3s ease-in-out infinite;">
+    <pre id="letterBox" style="white-space:pre-wrap; min-height:100px; padding-right:8px; z-index:2; position:relative; margin:0;"></pre>
+    <span class="cursor-neon" id="cursor">█</span>
 
-    <!-- Floating PINK HEARTS -->
+    <div style="position:absolute; bottom:10px; right:18px; font-size:0.8rem; color:#ff9ee7b5; z-index:2;">
+      – From the quiet side of <span style="color:#23ffe8; font-weight:600;">Prince Soni</span>
+    </div>
+
+    <!-- 💗 Floating PINK HEARTS -->
     <div class="floating-heart" style="top: -12px; left: 28px;"></div>
     <div class="floating-heart" style="top: 28px; right: 36px;"></div>
     <div class="floating-heart" style="bottom: 12px; left: 50px;"></div>
     <div class="floating-heart" style="bottom: 22px; right: 44px;"></div>
   </div>
+
+  <!-- 🔊 Click-to-hear prompt -->
+  <div style="text-align:center; margin-top:-10px; margin-bottom:32px;">
+    <span style="
+      color:#23ffe8cc;
+      font-size:0.95rem;
+      font-family:'Poppins', sans-serif;
+      letter-spacing:0.5px;
+      text-shadow: 0 0 6px #23ffe899;
+      animation: glowText 2.4s infinite ease-in-out;
+      display:inline-block;
+    ">
+      🔊 Click the box to hear what silence sounds like
+    </span>
+  </div>
+
+  <!-- 🎵 Hidden Audio Player -->
+  <audio id="loveAudio" src="perfect.mp3" loop></audio>
 </section>
 
 <style>
@@ -202,17 +221,21 @@
   50% {opacity: 0;}
 }
 .cursor-neon {
-  position: absolute;
-  bottom: 40px;
-  left: 28px;
   font-size: 1rem;
   color: #23ffe8;
   animation: blink 1s infinite;
-  z-index: 2;
+  position: absolute;
+  margin-left: 2px;
+  display: inline-block;
+  transform: translateY(-4px);
 }
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 26px #23ffe84a, inset 0 0 16px #23ffe855; }
-  50%     { box-shadow: 0 0 30px #23ffe877, inset 0 0 20px #23ffe899; }
+  0%,100% {
+    box-shadow: 0 0 26px #23ffe84a, inset 0 0 16px #23ffe855;
+  }
+  50% {
+    box-shadow: 0 0 30px #23ffe877, inset 0 0 20px #23ffe899;
+  }
 }
 .floating-heart {
   position: absolute;
@@ -243,38 +266,53 @@
   0% {transform: translateY(0) scale(1); opacity: 1;}
   100% {transform: translateY(-60px) scale(1.4); opacity: 0;}
 }
+@keyframes glowText {
+  0% { opacity: 0.8; text-shadow: 0 0 4px #23ffe866; }
+  50% { opacity: 1; text-shadow: 0 0 12px #23ffe8aa; }
+  100% { opacity: 0.8; text-shadow: 0 0 4px #23ffe866; }
+}
 </style>
 
 <script>
-const quotes = [
-  "Every moment with you feels like magic.\nYou turn the ordinary into extraordinary.",
-  "Your smile doesn’t just light up your face,\nit brightens everything inside me too.",
-  "I didn’t plan on falling for you...\nbut now I can't imagine rising without you.",
-  "Will you make every tomorrow just as beautiful?\nBy simply being mine 💗"
+const letters = [
+  "I wanted to impress you with design...\nbut all I really wanted was for you to stay a little longer.",
+  "I never hit send.\nBut maybe I left those words between the pixels instead.",
+  "Some people write poems.\nI just write sections, hoping you’d scroll one more.",
+  "I won’t DM you.\nBut I’ll leave my feelings here — wrapped in style and silence."
 ];
 
 let quoteIndex = 0;
 let charIndex = 0;
-const el = document.getElementById("rotatingLove");
+const box = document.getElementById("letterBox");
+const cursor = document.getElementById("cursor");
 
-function typeQuote() {
-  const quote = quotes[quoteIndex];
-  if (charIndex < quote.length) {
-    el.textContent += quote.charAt(charIndex);
+function typeLetter() {
+  const quote = letters[quoteIndex];
+  if (charIndex <= quote.length) {
+    box.textContent = quote.substring(0, charIndex);
     charIndex++;
-    setTimeout(typeQuote, 38);
+    setTimeout(typeLetter, 38);
   } else {
     setTimeout(() => {
-      el.textContent = "";
+      box.textContent = "";
       charIndex = 0;
-      quoteIndex = (quoteIndex + 1) % quotes.length;
-      typeQuote();
-    }, 3000); // time before next quote
+      quoteIndex = (quoteIndex + 1) % letters.length;
+      typeLetter();
+    }, 3200);
   }
 }
-window.addEventListener('DOMContentLoaded', typeQuote);
+
+window.addEventListener('DOMContentLoaded', () => {
+  typeLetter();
+  const observer = new MutationObserver(() => {
+    const lines = box.innerText.split("\n");
+    const lastLine = lines[lines.length - 1];
+    cursor.style.left = `${8 + lastLine.length * 8}px`;
+    cursor.style.top = `${box.scrollHeight - 24}px`;
+  });
+  observer.observe(box, { childList: true, subtree: true, characterData: true });
+});
 </script>
-    </section>
     <!-- Testimonials -->
     <section>
       <h2>What People Say</h2>
