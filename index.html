@@ -115,7 +115,6 @@
           <div class="hob-card">📸 Telegram tools</div>
           <div class="hob-card">🎧 Python</div>
           <div class="hob-card">🌌 Space & Sci-fi</div>
-          <div class="hob-card">📚 Reading</div>
         </div>
       </div>
     </section>
@@ -177,17 +176,106 @@
         </div>
       </div>
     </section>
-    <!-- Q & A -->
-    <section>
-      <h2>Q&A</h2>
-      <div class="section-content faq-list">
-        <div class="faq-q">Why do you love dark themes?</div>
-        <div class="faq-a">They’re easy on the eyes, super aesthetic, and perfect for neon & cyberpunk vibes!</div>
-        <div class="faq-q">Best project you ever made?</div>
-        <div class="faq-a">A dynamic memory game with custom animation and real-time leaderboard.</div>
-        <div class="faq-q">Favourite tool?</div>
-        <div class="faq-a">VS Code, Figma, and pure HTML/CSS magic.</div>
-      </div>
+    <!-- 💌 Rotating Romantic Quotes - Clean & Classy -->
+<section style="margin-top:48px; position:relative; overflow:hidden;">
+  <h2 style="text-align:center; color:#23ffe8; font-weight:700; font-size:1.6rem;">
+    A Few Things I Wish You Knew...(for her)💗
+  </h2>
+
+  <div style="background:linear-gradient(145deg, #181c2b, #1f2236); margin:20px auto 30px auto; padding:22px 20px; border-radius:18px; box-shadow:0 0 20px #23ffe840, inset 0 0 12px #23ffe850; max-width:600px; font-family:'Poppins', sans-serif; color:#ffeafd; font-size:0.95rem; line-height:1.6; position:relative; animation: pulse 2.8s ease-in-out infinite;">
+    <pre id="rotatingLove" style="white-space:pre-wrap; min-height:100px; padding-right:8px; z-index:2; position:relative;"></pre>
+    <!-- 💗 Credit Line -->
+    <div style="position:absolute; bottom:8px; right:16px; font-size:0.8rem; color:#ffb6eec7; z-index:2;">
+      – Crafted by <span style="color:#23ffe8; font-weight:600;">Prince Soni 💚</span>
+    </div>
+    <div class="cursor-neon">█</div>
+
+    <!-- Floating PINK HEARTS -->
+    <div class="floating-heart" style="top: -12px; left: 28px;"></div>
+    <div class="floating-heart" style="top: 28px; right: 36px;"></div>
+    <div class="floating-heart" style="bottom: 12px; left: 50px;"></div>
+    <div class="floating-heart" style="bottom: 22px; right: 44px;"></div>
+  </div>
+</section>
+
+<style>
+@keyframes blink {
+  0%,100% {opacity: 1;}
+  50% {opacity: 0;}
+}
+.cursor-neon {
+  position: absolute;
+  bottom: 40px;
+  left: 28px;
+  font-size: 1rem;
+  color: #23ffe8;
+  animation: blink 1s infinite;
+  z-index: 2;
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 26px #23ffe84a, inset 0 0 16px #23ffe855; }
+  50%     { box-shadow: 0 0 30px #23ffe877, inset 0 0 20px #23ffe899; }
+}
+.floating-heart {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff66c4;
+  transform: rotate(45deg);
+  animation: floatHeart 4s infinite ease-in-out, rise 6s infinite ease-in-out;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px #ff66c4cc);
+}
+.floating-heart::before, .floating-heart::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff66c4;
+  border-radius: 50%;
+}
+.floating-heart::before { top: -6px; left: 0; }
+.floating-heart::after  { left: -6px; top: 0; }
+@keyframes floatHeart {
+  0% {transform: translateY(0) rotate(45deg); opacity: 0.7;}
+  50% {transform: translateY(-12px) rotate(45deg); opacity: 1;}
+  100% {transform: translateY(0) rotate(45deg); opacity: 0.7;}
+}
+@keyframes rise {
+  0% {transform: translateY(0) scale(1); opacity: 1;}
+  100% {transform: translateY(-60px) scale(1.4); opacity: 0;}
+}
+</style>
+
+<script>
+const quotes = [
+  "Every moment with you feels like magic.\nYou turn the ordinary into extraordinary.",
+  "Your smile doesn’t just light up your face,\nit brightens everything inside me too.",
+  "I didn’t plan on falling for you...\nbut now I can't imagine rising without you.",
+  "Will you make every tomorrow just as beautiful?\nBy simply being mine 💗"
+];
+
+let quoteIndex = 0;
+let charIndex = 0;
+const el = document.getElementById("rotatingLove");
+
+function typeQuote() {
+  const quote = quotes[quoteIndex];
+  if (charIndex < quote.length) {
+    el.textContent += quote.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeQuote, 38);
+  } else {
+    setTimeout(() => {
+      el.textContent = "";
+      charIndex = 0;
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+      typeQuote();
+    }, 3000); // time before next quote
+  }
+}
+window.addEventListener('DOMContentLoaded', typeQuote);
+</script>
     </section>
     <!-- Testimonials -->
     <section>
