@@ -174,28 +174,84 @@ window.addEventListener("DOMContentLoaded", () => {
         </span>Email</a>
               </div>
     
-    <!-- Skills -->
-    <section>
-      <h2>Skills</h2>
-      <div class="section-content skills-block">
-        <div>
-          <div class="skill-label">HTML <span>💯</span></div>
-          <div class="bar-bg"><div class="bar bar-html"></div></div>
-        </div>
-        <div>
-          <div class="skill-label">CSS <span>🔥</span></div>
-          <div class="bar-bg"><div class="bar bar-css"></div></div>
-        </div>
-        <div>
-          <div class="skill-label">JavaScript <span>✨</span></div>
-          <div class="bar-bg"><div class="bar bar-js"></div></div>
-        </div>
-        <div>
-          <div class="skill-label">Web/Graphic Design <span>🎨</span></div>
-          <div class="bar-bg"><div class="bar bar-design"></div></div>
-        </div>
+    <!-- 💼 My Skills – Dark Neon Bars -->
+<section style="margin-top:30px; padding:30px 24px; background:linear-gradient(145deg, #121520, #1c1f30); border-radius:24px; max-width:820px; margin:auto; box-shadow:0 0 30px #23ffe83a; font-family:'Poppins', sans-serif;">
+
+  <h2 style="text-align:center; font-size:1.8rem; font-weight:600; color:#23ffe8; margin-bottom:40px; text-shadow:0 0 8px #23ffe877;">
+    💼 My Skills
+  </h2>
+
+  <div style="display:flex; flex-direction:column; gap:24px; max-width:600px; margin:auto;">
+    
+    <div class="skill-block">
+      <div class="skill-head">
+        <span>HTML</span>
+        <span>95%</span>
       </div>
-    </section>
+      <div class="skill-bar"><div class="bar-fill" style="width:95%; background:#23ffe8;"></div></div>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-head">
+        <span>CSS</span>
+        <span>90%</span>
+      </div>
+      <div class="skill-bar"><div class="bar-fill" style="width:90%; background:#ff66c4;"></div></div>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-head">
+        <span>JavaScript</span>
+        <span>85%</span>
+      </div>
+      <div class="skill-bar"><div class="bar-fill" style="width:85%; background:#ffc66b;"></div></div>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-head">
+        <span>Python</span>
+        <span>80%</span>
+      </div>
+      <div class="skill-bar"><div class="bar-fill" style="width:80%; background:#9c6eff;"></div></div>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-head">
+        <span>UI/UX</span>
+        <span>75%</span>
+      </div>
+      <div class="skill-bar"><div class="bar-fill" style="width:75%; background:#32ffc9;"></div></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.skill-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffffcc;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.skill-bar {
+  background: #1a1e2e;
+  height: 14px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px #23ffe855;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 14px #23ffe84f;
+  transition: width 0.6s ease;
+}
+</style>
     <div style="margin-bottom: 30px;"></div>
   <!-- 🏆 Compact Achievements Section -->
 <section style="margin-top:50px; padding:40px 20px; max-width:780px; margin:auto; background:linear-gradient(145deg, #161a2b, #1c1f30); border-radius:20px; box-shadow:0 0 30px #23ffe83a; font-family:'Poppins', sans-serif; position:relative;">  
