@@ -592,58 +592,43 @@ function toggleLoveMusic() {
 </style>
       
       
-    <!-- Footer -->
-<footer style="
-  padding: 30px 20px;
-  background: transparent; /* Fully transparent background */
-  text-align: center;
-">
-  <!-- 🌟 Top Static Line -->
-  <p class="footer-top-line">Crafted with clean</p>
-
-  <!-- 🔄 Animated Bottom Line -->
+    <footer style="margin-top: 50px; padding: 30px 16px; text-align: center; font-family: 'Poppins', sans-serif; background: #111320; border-radius: 22px; box-shadow: 0 0 25px #23ffe82a;">
+  
   <div class="footer-typewriter">
     <span class="footer-bottom-text" id="footer-typewriter"></span>
     <span class="blinking-caret">|</span>
   </div>
+
+  <div style="margin-top: 12px; font-size: 0.88rem; color: #7ee0d1;">
+    © 2025 Prince Soni. All Rights Reserved.
+  </div>
 </footer>
 
 <style>
-.footer-top-line {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  background: linear-gradient(90deg, #23ffe8, #ff66c4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(35, 255, 232, 0.2);
-  letter-spacing: 0.5px;
-}
-
 .footer-typewriter {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .footer-bottom-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   background: linear-gradient(90deg, #23ffe8, #ff66c4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.4px;
   display: inline-block;
-  max-width: 100%;
   overflow: hidden;
 }
 
 .blinking-caret {
   color: #23ffe8;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.1rem;
   animation: blink 1s infinite;
 }
 
@@ -655,10 +640,10 @@ function toggleLoveMusic() {
 
 <script>
 const footerLines = [
-  "code & caffeine — Prince",
-  "pixels & purpose — Prince",
-  "logic & late nights — Prince",
-  "design & discipline — Prince"
+  "Code & Caffeine — Prince",
+  "Pixels & Purpose — Prince",
+  "Logic & Late nights — Prince",
+  "Design & Discipline — Prince"
 ];
 
 let line = 0;
@@ -683,7 +668,7 @@ function animateFooter() {
     textEl.textContent = current.substring(0, char);
     if (char === current.length) {
       deleting = true;
-      setTimeout(animateFooter, 1400);
+      setTimeout(animateFooter, 1300);
     } else {
       setTimeout(animateFooter, 50);
     }
@@ -692,11 +677,3 @@ function animateFooter() {
 
 animateFooter();
 </script>
-      
-    <div class="copyright">
-      &copy; 2025 Prince Soni. All Rights Reserved.
-    </div>
-  </div>
-</body>
-</html>
-
