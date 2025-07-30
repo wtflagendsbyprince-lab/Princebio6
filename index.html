@@ -87,75 +87,55 @@
   100% { background-position: 200% }
 }
 </style>
-      <!-- 🌌 About Me – Compact Typewriter + Emoji -->
-<section style="margin-top:40px; padding:28px 20px; background:linear-gradient(145deg, #181c2b, #1f2236); border-radius:18px; max-width:760px; margin:auto; box-shadow:0 0 24px #23ffe83a; position:relative; overflow:hidden;">
+   <!-- 👨‍💻 Compact About Me Section – Neon Dark Mode -->
+<section style="margin-top:30px; padding:28px 16px; background:linear-gradient(135deg, #181c2b, #1f2236); border-radius:18px; max-width:720px; margin:auto; box-shadow:0 0 24px #23ffe83a; font-family:'Poppins', sans-serif;">
 
-  <h2 style="text-align:center; font-family:'Poppins', sans-serif; font-size:1.4rem; font-weight:600; margin-bottom:16px;">
-    <span style="background: linear-gradient(90deg, #23ffe8, #ff66c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow:0 0 6px #23ffe877;">
-      About Prince 
-    </span>
+  <h2 style="text-align:center; font-size:1.3rem; font-weight:600; color:#23ffe8; margin-bottom:18px; text-shadow:0 0 6px #23ffe877;">
+    About <span style="background: linear-gradient(90deg, #23ffe8, #ff66c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Prince</span>
   </h2>
 
-  <div id="aboutTyped" style="font-family:'Inter', sans-serif; color:#b8faff; font-size:0.95rem; line-height:1.65; text-align:center; max-width:640px; margin:0 auto; white-space:pre-wrap;"></div>
+  <div id="aboutType" style="text-align:center; font-size:0.9rem; color:#c9f6ff; line-height:1.6; max-width:600px; margin:auto;"></div>
 
-  <!-- ✍️ Signature -->
-  <div style="text-align:right; padding-top:18px; padding-right:10px;">
-    <span style="font-family:'Dancing Script', cursive; font-size:1rem; color:#ff66c4c7; text-shadow:0 0 6px #ff66c4aa;">
+  <div style="text-align:right; padding-top:16px;">
+    <span style="font-family:'Dancing Script', cursive; font-size:1rem; color:#ff66c4d0; text-shadow:0 0 5px #ff66c4aa;">
       — Prince Soni
     </span>
   </div>
 </section>
 
-<!-- 👾 Emoji Float -->
-<style>
-.emoji {
-  display: inline-block;
-  animation: floatEmoji 2.2s ease-in-out infinite;
-}
-@keyframes floatEmoji {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-</style>
-
-<!-- ⌨️ Typewriter Script -->
+<!-- ⌨️ Typewriter Effect -->
 <script>
 const aboutLines = [
-  "I'm not just writing code — I'm <span class='emoji'>designing emotions 💻✨</span>.",
-  "19 y/o developer from Madhya Pradesh, India Most of my best work starts after midnight — when the world sleeps and thoughts get louder Not trying to be perfect — just trying to be honest. In my work. In my word.",
-  "I build smooth UIs with <span class='emoji'>vibes 🎧</span> & <span class='emoji'>logic ⚙️</span>.",
-  "<span class='emoji'>⚡</span> Skills: HTML, CSS, JS, Python, Java",
-  "<span class='emoji'>🎯</span> Hobbies: UI/theme design, Editing, Coding"
+  "I'm a self-taught developer from Madhya Pradesh, India 🇮🇳",
+  "Age: 18 | Obsessed with clean UIs & glowing pixels ⚡",
+  "Skilled in HTML, CSS, JavaScript, Python 💻",
+  "Hobbies: Designing, Coding, Lo-Fi, and Late-night Debugging 🎧🌌",
+  "I create not just websites, but experiences 🖤"
 ];
 
-let index = 0;
-const aboutBox = document.getElementById("aboutTyped");
+let line = 0, char = 0;
+const speed = 38;
+const aboutContainer = document.getElementById("aboutType");
 
-function typeHTMLLine(line, i = 0, buffer = "") {
-  const temp = document.createElement("div");
-  temp.innerHTML = line;
-  const plainText = temp.textContent || temp.innerText || "";
-
-  function write() {
-    if (i <= plainText.length) {
-      aboutBox.innerHTML = buffer + plainText.substring(0, i);
-      i++;
-      setTimeout(write, 22);
+function typeAbout() {
+  if (line < aboutLines.length) {
+    if (char < aboutLines[line].length) {
+      aboutContainer.innerHTML += aboutLines[line].charAt(char);
+      char++;
+      setTimeout(typeAbout, speed);
     } else {
-      aboutBox.innerHTML = buffer + line + "<br/>";
-      index++;
-      if (index < aboutLines.length) {
-        setTimeout(() => typeHTMLLine(aboutLines[index], 0, aboutBox.innerHTML), 400);
-      }
+      aboutContainer.innerHTML += "<br/><br/>";
+      char = 0;
+      line++;
+      setTimeout(typeAbout, 400);
     }
   }
-  write();
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-  typeHTMLLine(aboutLines[index]);
-});
+window.addEventListener("DOMContentLoaded", typeAbout);
 </script>
+
+<!-- Optional Signature Font -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />   
 
 <!-- 🖋️ Font -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
