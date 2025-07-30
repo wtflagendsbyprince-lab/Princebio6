@@ -196,20 +196,91 @@ window.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </section>
-    <!-- Achievements/Certifications -->
-    <section>
-      <h2>Achievements & Certifications</h2>
-      <div class="section-content">
-        <div class="ach-list">
-          <div class="badge"><span class="icon">🏆</span> Winner: TGCodeFest'24</div>
-          <div class="badge"><span class="icon">🎓</span> Web Design </div>
-          <div class="badge"><span class="icon">⭐</span> Top 10 UI Challenge</div>
-          <div class="badge"><span class="icon">🚀</span> 50+ Projects Completed</div>
-  
-        </div>
-      </div>
-    </section>
-  
+    
+  <!-- 🏆 Compact Achievements Section -->
+<section style="margin-top:50px; padding:40px 20px; max-width:780px; margin:auto; background:linear-gradient(145deg, #161a2b, #1c1f30); border-radius:20px; box-shadow:0 0 30px #23ffe83a; font-family:'Poppins', sans-serif; position:relative;">  
+  <h2 style="text-align:center; font-size:1.6rem; font-weight:600; color:#23ffe8; margin-bottom:28px; text-shadow:0 0 8px #23ffe877; position:relative;">
+    💫 Achievement & Certification 
+    <span class="badge">New</span>
+  </h2>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="achievement-card">
+      <span class="emoji animated-icon">🏆</span>
+      <span>Winner of <strong style="color:#ff66c4;">TGCodeFest'24</strong> – UI/UX Hackathon</span>
+    </div>
+
+    <div class="achievement-card">
+      <span class="emoji animated-icon">🚀</span>
+      <span><strong style="color:#23ffe8;">50+ Projects</strong> crafted with precision & emotion</span>
+    </div>
+
+    <div class="achievement-card">
+      <span class="emoji animated-icon">⚒️</span>
+      <span>Built <strong style="color:#ff66c4;">5+ Tools</strong> to automate my life</span>
+    </div>
+
+    <div class="achievement-card">
+      <span class="emoji animated-icon">🎓</span>
+      <span>Web Design Certified – <strong style="color:#ff66c4;">DevStudio Pro Track</strong></span>
+    </div>
+
+    <div class="achievement-card">
+      <span class="emoji animated-icon">⭐</span>
+      <span>Top 10 UI Challenge – <strong style="color:#23ffe8;">CodeHustle</strong></span>
+    </div>
+  </div>
+</section>
+
+<style>
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(26, 30, 46, 0.55);
+  padding: 12px 18px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 0 10px #23ffe83a, inset 0 0 5px #23ffe84a;
+  border: 1px solid #23ffe84a;
+  transition: 0.3s ease;
+}
+.achievement-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 16px #23ffe899, 0 0 10px #ff66c488;
+}
+.emoji {
+  font-size: 1.2rem;
+  text-shadow: 0 0 4px #ffffff88;
+}
+.animated-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+}
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -16px;
+  background: linear-gradient(90deg, #ff66c4, #23ffe8);
+  color: #121826;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #23ffe888;
+  animation: pulseBadge 2s infinite ease-in-out;
+}
+@keyframes pulseBadge {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+</style>
    
 <!-- 💌 Letters I’ll Never Send – With Music Toggle -->
 <section style="margin-top:60px; position:relative; overflow:hidden;">
