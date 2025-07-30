@@ -590,15 +590,15 @@ function toggleLoveMusic() {
   box-shadow: 0 0 30px #23ffe8aa, 0 0 14px #ff66c488;
 }
 </style>
-      <!-- ✅ Footer with Typewriter Text & Copyright -->
-<footer style="margin-top:60px; padding:30px 20px 12px 20px; text-align:center; font-family:'Poppins', sans-serif; background:#141822; color:#23ffe8;">
+      <!-- ✅ Neon Footer with Rounded Corners + Glow -->
+<footer style="margin:60px auto 0 auto; padding:30px 20px 16px 20px; max-width:800px; text-align:center; font-family:'Poppins', sans-serif; background:rgba(20, 24, 34, 0.95); color:#23ffe8; border-radius:18px; box-shadow:0 0 28px #23ffe839;">
 
   <div class="footer-typewriter">
     <span class="footer-bottom-text" id="footer-typewriter"></span>
     <span class="blinking-caret">|</span>
   </div>
 
-  <div class="footer-copy" style="margin-top:18px; font-size:0.92rem; color:#9beadf; opacity:0.8;">
+  <div class="footer-copy" style="margin-top:20px; font-size:0.92rem; color:#9beadf; opacity:0.85;">
     © 2025 <strong>Prince Soni</strong>. All Rights Reserved.
   </div>
 </footer>
@@ -669,7 +669,7 @@ document.addEventListener("DOMContentLoaded", () => {
       textEl.textContent = current.substring(0, char);
       if (char === current.length) {
         deleting = true;
-        setTimeout(animateFooter, 1500);
+        setTimeout(animateFooter, 1400);
       } else {
         setTimeout(animateFooter, 50);
       }
@@ -679,4 +679,3 @@ document.addEventListener("DOMContentLoaded", () => {
   animateFooter();
 });
 </script>
-      
