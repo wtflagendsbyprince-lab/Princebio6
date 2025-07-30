@@ -592,26 +592,22 @@ function toggleLoveMusic() {
 </style>
       
       
-    <footer style="margin-top: 50px; padding: 30px 16px; text-align: center; font-family: 'Poppins', sans-serif; background: #111320; border-radius: 22px; box-shadow: 0 0 25px #23ffe82a;">
-  
+    <!-- ⚡ Footer Typewriter Section -->
+<footer style="margin-top:60px; padding:30px 20px; text-align:center; font-family:'Poppins', sans-serif; background:#141822; color:#23ffe8;">
   <div class="footer-typewriter">
     <span class="footer-bottom-text" id="footer-typewriter"></span>
     <span class="blinking-caret">|</span>
   </div>
-
-  <div style="margin-top: 12px; font-size: 0.88rem; color: #7ee0d1;">
-    © 2025 Prince Soni. All Rights Reserved.
-  </div>
 </footer>
 
+<!-- 🖋 Typewriter CSS -->
 <style>
 .footer-typewriter {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
   max-width: 100%;
-  margin-bottom: 10px;
 }
 
 .footer-bottom-text {
@@ -628,7 +624,7 @@ function toggleLoveMusic() {
 .blinking-caret {
   color: #23ffe8;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   animation: blink 1s infinite;
 }
 
@@ -638,12 +634,13 @@ function toggleLoveMusic() {
 }
 </style>
 
+<!-- 🧠 Typewriter Script -->
 <script>
 const footerLines = [
-  "Code & Caffeine — Prince",
-  "Pixels & Purpose — Prince",
-  "Logic & Late nights — Prince",
-  "Design & Discipline — Prince"
+  "code & caffeine — Prince",
+  "pixels & purpose — Prince",
+  "logic & late nights — Prince",
+  "design & discipline — Prince"
 ];
 
 let line = 0;
@@ -659,7 +656,7 @@ function animateFooter() {
     if (char === 0) {
       deleting = false;
       line = (line + 1) % footerLines.length;
-      setTimeout(animateFooter, 400);
+      setTimeout(animateFooter, 500);
     } else {
       setTimeout(animateFooter, 30);
     }
@@ -668,12 +665,12 @@ function animateFooter() {
     textEl.textContent = current.substring(0, char);
     if (char === current.length) {
       deleting = true;
-      setTimeout(animateFooter, 1300);
+      setTimeout(animateFooter, 1400);
     } else {
-      setTimeout(animateFooter, 50);
+      setTimeout(animateFooter, 60);
     }
   }
 }
 
-animateFooter();
+document.addEventListener("DOMContentLoaded", animateFooter);
 </script>
