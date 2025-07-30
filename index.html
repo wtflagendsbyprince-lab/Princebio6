@@ -590,9 +590,7 @@ function toggleLoveMusic() {
   box-shadow: 0 0 30px #23ffe8aa, 0 0 14px #ff66c488;
 }
 </style>
-      
-      
-    <!-- ⚡ Footer Typewriter Section -->
+      <!-- ✅ Footer with Typewriter Text -->
 <footer style="margin-top:60px; padding:30px 20px; text-align:center; font-family:'Poppins', sans-serif; background:#141822; color:#23ffe8;">
   <div class="footer-typewriter">
     <span class="footer-bottom-text" id="footer-typewriter"></span>
@@ -600,14 +598,13 @@ function toggleLoveMusic() {
   </div>
 </footer>
 
-<!-- 🖋 Typewriter CSS -->
 <style>
 .footer-typewriter {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  max-width: 100%;
+  gap: 6px;
+  min-height: 24px;
 }
 
 .footer-bottom-text {
@@ -616,15 +613,15 @@ function toggleLoveMusic() {
   background: linear-gradient(90deg, #23ffe8, #ff66c4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 0.4px;
-  display: inline-block;
+  white-space: nowrap;
   overflow: hidden;
+  letter-spacing: 0.5px;
 }
 
 .blinking-caret {
   color: #23ffe8;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
   animation: blink 1s infinite;
 }
 
@@ -634,43 +631,48 @@ function toggleLoveMusic() {
 }
 </style>
 
-<!-- 🧠 Typewriter Script -->
 <script>
-const footerLines = [
-  "code & caffeine — Prince",
-  "pixels & purpose — Prince",
-  "logic & late nights — Prince",
-  "design & discipline — Prince"
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const footerLines = [
+    "code & caffeine — Prince",
+    "pixels & purpose — Prince",
+    "logic & late nights — Prince",
+    "design & discipline — Prince"
+  ];
 
-let line = 0;
-let char = 0;
-let deleting = false;
-const textEl = document.getElementById("footer-typewriter");
+  let line = 0;
+  let char = 0;
+  let deleting = false;
+  const textEl = document.getElementById("footer-typewriter");
 
-function animateFooter() {
-  const current = footerLines[line];
-  if (deleting) {
-    char--;
-    textEl.textContent = current.substring(0, char);
-    if (char === 0) {
-      deleting = false;
-      line = (line + 1) % footerLines.length;
-      setTimeout(animateFooter, 500);
+  function animateFooter() {
+    const current = footerLines[line];
+    if (!textEl) return;
+
+    if (deleting) {
+      char--;
+      textEl.textContent = current.substring(0, char);
+      if (char === 0) {
+        deleting = false;
+        line = (line + 1) % footerLines.length;
+        setTimeout(animateFooter, 400);
+      } else {
+        setTimeout(animateFooter, 30);
+      }
     } else {
-      setTimeout(animateFooter, 30);
-    }
-  } else {
-    char++;
-    textEl.textContent = current.substring(0, char);
-    if (char === current.length) {
-      deleting = true;
-      setTimeout(animateFooter, 1400);
-    } else {
-      setTimeout(animateFooter, 60);
+      char++;
+      textEl.textContent = current.substring(0, char);
+      if (char === current.length) {
+        deleting = true;
+        setTimeout(animateFooter, 1500);
+      } else {
+        setTimeout(animateFooter, 50);
+      }
     }
   }
-}
 
-document.addEventListener("DOMContentLoaded", animateFooter);
+  animateFooter();
+});
 </script>
+  
+    
