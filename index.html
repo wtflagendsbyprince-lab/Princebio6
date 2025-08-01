@@ -153,7 +153,120 @@ window.addEventListener("DOMContentLoaded", typeAbout);
           <svg width="22" height="22" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#12ffd4"/><polyline points="7,10 16,20 25,10" fill="none" stroke="#fff" stroke-width="2"/><rect x="7" y="10" width="18" height="12" rx="2" fill="none" stroke="#fff" stroke-width="2"/></svg>
         </span>Email</a>
               </div>
-    
+    <!-- 🎂 Birthday Countdown Neon Section -->
+<section style="margin:40px auto; padding:40px 20px; max-width:720px; background:linear-gradient(135deg,#161a2b,#1c1f30); border-radius:24px; box-shadow:0 0 45px #23ffe859; font-family:'Poppins', sans-serif; text-align:center; position:relative; overflow:hidden;">
+  
+  <!-- 🎆 Background Glow -->
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle, #23ffe81c 10%, transparent 60%), radial-gradient(circle at bottom, #ff66c419 20%, transparent 80%); animation:bgmove 10s ease-in-out infinite alternate; z-index:0;"></div>
+
+  <!-- 🎉 Heading -->
+  <h2 id="bday-heading" style="font-size:2rem; font-weight:600; color:#23ffe8; position:relative; z-index:1; text-shadow:0 0 10px #23ffe888;">🥳 About My Birthday!</h2>
+
+  <!-- 💬 Quote -->
+  <p style="font-size:1.1rem; margin-top:6px; color:#ffc9f2; z-index:1; position:relative;">
+    "Another year of awesomeness loading..." 🚀
+  </p>
+
+  <!-- 🎈 Date -->
+  <p style="margin-top:12px; font-size:1.2rem; font-weight:700; color:#ffffff; background:#23ffe811; padding:8px 16px; border-radius:12px; display:inline-block; box-shadow:0 0 12px #23ffe83a; z-index:1; position:relative;">
+    🎈 5 March
+  </p>
+
+  <!-- ⏳ Countdown -->
+  <div id="countdown" style="display:flex; justify-content:center; gap:16px; margin-top:30px; flex-wrap:wrap; z-index:1; position:relative;">
+    <div class="time-box"><span id="days">--</span><div>Days</div></div>
+    <div class="time-box"><span id="hours">--</span><div>Hours</div></div>
+    <div class="time-box"><span id="minutes">--</span><div>Mins</div></div>
+    <div class="time-box"><span id="seconds">--</span><div>Secs</div></div>
+  </div>
+
+  <!-- 🎁 Surprise Message (Initially Hidden) -->
+  <div id="surprise" style="display:none; margin-top:30px; padding:30px 20px; background:#1b1028; border-radius:20px; box-shadow:0 0 25px #ff66c4aa; position:relative; z-index:2;">
+    <h3 style="color:#69f0ff; font-size:1.5rem;">🎂 Happy Birthday to Me!🥳</h3>
+    <p style="color:#fff; margin:12px 0 8px;">Wishing you neon joy, unstoppable energy, and unlimited creative power! 🌟</p>
+  </div>
+
+</section>
+
+<!-- 🎨 Countdown Styles -->
+<style>
+.time-box {
+  background:#1a1e2f;
+  padding:13px 16px;
+  border-radius:16px;
+  color:#23ffe8;
+  font-size:1.35rem;
+  font-weight:bold;
+  text-align:center;
+  width:80px;
+  box-shadow:0 0 14px #23ffe83a, inset 0 0 8px #23ffe844;
+  transition:all 0.3s ease;
+}
+.time-box div {
+  margin-top:5px;
+  font-size:0.8rem;
+  color:#b8c9f0;
+  font-weight:500;
+}
+@keyframes bgmove {
+  0% { background-position:0 0; }
+  100% { background-position:100% 100%; }
+}
+</style>
+
+<!-- 🎇 Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<!-- 🧠 Countdown + Confetti Script -->
+<script>
+  const bday = new Date("March 5, 2026 00:00:00").getTime(); // 🎯 Update your birthday here
+  let celebrated = false;
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const gap = bday - now;
+
+    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((gap % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = d < 10 ? "0" + d : d;
+    document.getElementById("hours").textContent = h < 10 ? "0" + h : h;
+    document.getElementById("minutes").textContent = m < 10 ? "0" + m : m;
+    document.getElementById("seconds").textContent = s < 10 ? "0" + s : s;
+
+    if (gap <= 0 && !celebrated) {
+      celebrated = true;
+      document.getElementById("countdown").style.display = "none";
+      document.getElementById("surprise").style.display = "block";
+      document.getElementById("bday-heading").innerHTML = "🎊 It's My Birthday Today!";
+      launchConfetti();
+    }
+  }
+
+  function launchConfetti() {
+    const duration = 6 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
+
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) return clearInterval(interval);
+
+      const particleCount = 50 * (timeLeft / duration);
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
     <!-- 💼 My Skills – Dark Neon Bars -->
 <section style="margin-top:30px; padding:30px 24px; background:linear-gradient(145deg, #121520, #1c1f30); border-radius:24px; max-width:820px; margin:auto; box-shadow:0 0 30px #23ffe83a; font-family:'Poppins', sans-serif;">
 
